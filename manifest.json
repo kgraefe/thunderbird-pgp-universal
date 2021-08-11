@@ -1,0 +1,22 @@
+{
+  "name": "PGP Universal Fixes",
+  "description": "A sample addon that previews attachements",
+  "version": "2",
+  "applications": {
+    "gecko": {
+      "id": "pgp-universal-fixes@paktolos.net",
+      "strict_min_version": "78.9"
+    }
+  },
+  "permissions": [
+    "messagesRead",
+    "downloads",
+    "downloads.open"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "manifest_version": 2
+}
