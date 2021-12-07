@@ -1,47 +1,42 @@
-function handleMessagePart(part, attachements) {
-	console.log(part);
-		console.log(attachements);
-
-	if (part.hasOwnProperty("name")) {
-		if (part.name in attachements) {
-			part.contentType = attachements[part.name]["content-type"];
-			part.name = attachements[part.name]["name"];
-		}
-	}
-
-	if (part.hasOwnProperty("parts")) {
-		part.parts.forEach((part) => {
-			handleMessagePart(part, attachements);
-		});
-	}
-}
-
 messenger.messageDisplay.onMessageDisplayed.addListener(async(tab, message) => {
-	//messenger.messages.getFull(message.id).then(handleMessagePart);
 	messenger.messages.getRaw(message.id).then((binaryString) => {
-		description = null;
-		attachements = Array();
-		binaryString.split(/(?<!;)\r\n/g).forEach((line) => {
-			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Description: ")) {
-				description = line.split(" ", 2)[1];
+		attachments = {};
+
+		isPGPUniversal = false;
+		plaintextName = null;
+
+		binaryString.split(/(?<!;)\r\n/g).every((line) => {
+			if (line.startsWith("X-PGP-Universal: processed")) {
+				isPGPUniversal = true;
 			}
-			if (description == null) {
-				return;
+			if (!isPGPUniversal) {
+				if (line == "") {
+					/* We processed all mail headers and did not find a trace
+					 * of PGP Universal. Stop here.
+					 */
+					return false;
+				}
+				return true;
+			}
+
+			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Description: ")) {
+				plaintextName = line.substring( line.indexOf(" ") + 1 );
+			}
+			if (plaintextName == null) {
+				return true;
 			}
 			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Type: ")) {
 				contentType = line.split(/[ ;]/)[1];
 				fileName = line.split("\"")[1];
-				attachements[fileName] = {
-					"name": description,
-					"content-type": contentType
-				};
+				attachments[fileName] = plaintextName + ".pgp";
+				plaintextName = null;
 			}
+			return true;
 		});
 
-		console.log(attachements);
-
-		messenger.messages.getFull(message.id).then((part) => {
-			handleMessagePart(part, attachements);
-		});
+		if (isPGPUniversal) {
+			console.log(attachments);
+			messenger.renameattachments.setReplacements(attachments);
+		}
 	});
 });
