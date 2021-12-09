@@ -1,8 +1,8 @@
 {
 
   "manifest_version": 2,
-  "name": "PGP Universal Fixes",
-  "description": "A sample addon that previews attachements",
+  "name": "PGP Universal",
+  "description": "Fixes encrypted e-mail attachment names from PGP Universal servers",
   "author": "Konrad Gräfe <kgraefe@paktolos.net>",
   "version": "0.1",
 
