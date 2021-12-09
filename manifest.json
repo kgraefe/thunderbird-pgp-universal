@@ -8,7 +8,7 @@
 
   "applications": {
     "gecko": {
-      "id": "pgp-universal-fixes@paktolos.net",
+      "id": "tb-pgp-universal@paktolos.net",
       "strict_min_version": "91.0",
       "strict_max_version": "91.*"
     }
