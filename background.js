@@ -22,11 +22,13 @@ messenger.messageDisplay.onMessageDisplayed.addListener(async(tab, message) => {
 			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Description: ")) {
 				plaintextName = line.substring( line.indexOf(" ") + 1 );
 			}
+			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Type: text/calendar")) {
+				plaintextName = "Event.ics"
+			}
 			if (plaintextName == null) {
 				return true;
 			}
-			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Type: ")) {
-				contentType = line.split(/[ ;]/)[1];
+			if (line.startsWith("Content-Type: ")) {
 				fileName = line.split("\"")[1];
 				attachments[fileName] = plaintextName + ".pgp";
 				plaintextName = null;
