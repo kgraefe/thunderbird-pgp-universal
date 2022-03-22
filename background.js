@@ -5,7 +5,7 @@ messenger.messageDisplay.onMessageDisplayed.addListener(async(tab, message) => {
 		isPGPUniversal = false;
 		plaintextName = null;
 
-		binaryString.split(/(?<!;)\r\n/g).every((line) => {
+		binaryString.split(/(?<!;)\r\n(?!\s)/g).every((line) => {
 			if (line.startsWith("X-PGP-Universal: processed")) {
 				isPGPUniversal = true;
 			}
@@ -20,7 +20,9 @@ messenger.messageDisplay.onMessageDisplayed.addListener(async(tab, message) => {
 			}
 
 			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Description: ")) {
-				plaintextName = line.substring( line.indexOf(" ") + 1 );
+				plaintextName = line
+					.substring( line.indexOf(" ") + 1 )
+					.replace(/\r\n\s*/g, "");
 			}
 			if (line.startsWith("X-Content-PGP-Universal-Saved-Content-Type: text/calendar")) {
 				plaintextName = "Event.ics"
