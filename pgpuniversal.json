@@ -1,0 +1,19 @@
+[
+	{
+		"namespace": "pgpuniversal",
+		"functions": [
+			{
+				"name": "parseMessage",
+				"type": "function",
+				"description": "Parses a raw mail and renames attachments in message view if it is a PGP Universal mail",
+				"async": false,
+				"parameters": [
+					{
+						"name": "rawmsg",
+						"type": "string"
+					}
+				]
+			}
+		]
+	}
+]

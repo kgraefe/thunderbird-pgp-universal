@@ -25,12 +25,12 @@
   },
 
   "experiment_apis": {
-    "renameattachments": {
-      "schema": "renameattachments.json",
+    "pgpuniversal": {
+      "schema": "pgpuniversal.json",
       "parent": {
         "scopes": ["addon_parent"],
-        "paths": [["renameattachments"]],
-        "script": "renameattachments.js"
+        "paths": [["pgpuniversal"]],
+        "script": "pgpuniversal.js"
       }
     }
   }
