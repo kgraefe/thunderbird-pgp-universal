@@ -46,7 +46,12 @@ var pgpuniversal = class extends ExtensionCommon.ExtensionAPI {
 					for (let attachment of msg.allAttachments) {
 						let description = attachment.headers["x-content-pgp-universal-saved-content-description"];
 						if (description !== undefined && description.length > 0) {
-							Replacements[attachment.name] = description[0];
+							Replacements[attachment.name] = MimeParser.parseHeaderField(
+								description[0],
+								MimeParser.HEADER_OPTION_ALLOW_RAW
+									| MimeParser.HEADER_UNSTRUCTURED
+									| MimeParser.HEADER_OPTION_DECODE_2047
+							);
 						} else {
 							let type = attachment.headers["x-content-pgp-universal-saved-content-type"];
 							if (type !== undefined && type.length > 0 && type[0].startsWith("text/calendar;")) {
