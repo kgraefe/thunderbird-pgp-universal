@@ -51,11 +51,11 @@ var pgpuniversal = class extends ExtensionCommon.ExtensionAPI {
 								MimeParser.HEADER_OPTION_ALLOW_RAW
 									| MimeParser.HEADER_UNSTRUCTURED
 									| MimeParser.HEADER_OPTION_DECODE_2047
-							);
+							) + ".pgp";
 						} else {
 							let type = attachment.headers["x-content-pgp-universal-saved-content-type"];
 							if (type !== undefined && type.length > 0 && type[0].startsWith("text/calendar;")) {
-								Replacements[attachment.name] = "Event.ics";
+								Replacements[attachment.name] = "Event.ics.pgp";
 							}
 						}
 					}
