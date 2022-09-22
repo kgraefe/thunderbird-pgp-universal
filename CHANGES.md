@@ -1,5 +1,9 @@
 # Thunderbird PGP Universal Changes
 
+## Version 1.3 (2022-09-22)
+- Add GPLv2 license
+- Add Thunderbird 102 compatibility
+
 ## Version 1.2 (2022-05-02)
 - Refactor: Use Thunderbird MimeParse to parse raw messages
 - Decode RFC2047 encoded filenames
