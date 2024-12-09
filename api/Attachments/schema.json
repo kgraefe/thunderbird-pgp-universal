@@ -1,0 +1,23 @@
+[
+	{
+		"namespace": "Attachments",
+		"functions": [
+			{
+				"name": "updateNames",
+				"type": "function",
+				"description": "Updates the names of attachments while the message is shown.",
+				"async": true,
+				"parameters": [
+					{
+						"name": "tabId",
+						"type": "integer"
+					},
+					{
+						"name": "replacements",
+						"type": "any"
+					}
+				]
+			}
+		]
+	}
+]

@@ -4,13 +4,13 @@
   "name": "PGP Universal",
   "description": "Fixes encrypted e-mail attachment names from PGP Universal servers",
   "author": "Konrad Gräfe <kgraefe@paktolos.net>",
-  "version": "1.3",
+  "version": "1.4",
 
   "applications": {
     "gecko": {
       "id": "tb-pgp-universal@paktolos.net",
-      "strict_min_version": "91.0",
-      "strict_max_version": "102.*"
+      "strict_min_version": "128.0",
+      "strict_max_version": "130.*"
     }
   },
 
@@ -25,12 +25,12 @@
   },
 
   "experiment_apis": {
-    "pgpuniversal": {
-      "schema": "pgpuniversal.json",
+    "Attachments": {
+      "schema": "api/Attachments/schema.json",
       "parent": {
         "scopes": ["addon_parent"],
-        "paths": [["pgpuniversal"]],
-        "script": "pgpuniversal.js"
+        "paths": [["Attachments"]],
+        "script": "api/Attachments/implementation.js"
       }
     }
   }
