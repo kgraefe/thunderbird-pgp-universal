@@ -1,0 +1,83 @@
+Return-Path: <alice@openpgp.example>
+X-PGP-Encoding-Format: Partitioned
+X-PGP-Encoding-Version: 2.0.2
+Content-Type: multipart/related;
+	boundary="outermultipart";
+	type="multipart/alternative"
+Message-ID: <a52f1026-d56e-4119-a880-cd8005d31825@thunderbird.net>
+Date: Fri, 23 Aug 2024 16:38:09 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird Beta
+To: Alice Lovelace <alice@openpgp.example>
+From: Alice Lovelace <alice@openpgp.example>
+Subject: PGP Universal Test
+Envelope-To: <alice@openpgp.example>
+X-PGP-Universal: processed;
+	by openpgp.example on Fri, 23 Aug 2024 16:38:09 +0200
+
+--outermultipart
+Content-Type: multipart/mixed;
+	boundary="innermultipart"
+
+--innermultipart
+X-Content-PGP-Universal-Saved-Content-Transfer-Encoding: quoted-printable
+X-Content-PGP-Universal-Saved-Content-Type: text/plain; charset="iso-8859-1"
+Content-Type: text/plain; charset="iso-8859-1"
+
+-----BEGIN PGP MESSAGE-----
+
+hF4DR2b2udXyHrYSAQdAVR4M98rPAORnM5Hbarc22mkT475ZqBoOkHvt1I7xbhsw
+o5TaBC8zupjgHEogJ2WIRtlwlh4J7F5d4ahlYL49zsWYqCuEAtI1li9RF5XifY5k
+0nIBesszpo43owOhXBJIr/tMsOdZ7qYBJnpSPfDjnKM/XENtAemLb5y3R8IyWkTX
+mg37BLfXimGuyKxZgbh/3vB85W6VWF0jA/xr62de68yWaygQLE7rOAn9gP5Zai9S
++X3QxahIQ3hj22pNWztp3vANjPg=
+=QTIW
+-----END PGP MESSAGE-----
+
+--innermultipart
+X-Content-PGP-Universal-Saved-Content-Transfer-Encoding: quoted-printable
+X-Content-PGP-Universal-Saved-Content-Type: text/html; charset="iso-8859-1"
+Content-Type: application/octet-stream;
+	name="PGPexch.htm.pgp"
+Content-Disposition: inline;
+	filename="PGPexch.htm.pgp"
+X-PGP-MIME-Structure: alternative
+
+-----BEGIN PGP MESSAGE-----
+
+hF4DR2b2udXyHrYSAQdA/fd0epnD/yGp6wX7sENzx/Xp22ZyQuemWt7txgHIIWsw
+xWmjc/v9iPBQjHBNInD2CjF9wYFpfq4VViIzV7WaZSlW0+YdTHfPioQjmnBoWf7n
+0qIBhbVgO4oM7iiplZKzv7fuAu4e6oDfN4i5iJbqxoZoo/w8x77j+NnIzjHOZGuq
+eaM66HQ4E82HFVurtsXSmMEAv3rFldS81hH3lK9W74TDgyLFM3GInbLT+IcaqJbZ
+RF0aAypJO8JYH90xuhBZzzN3Dsw3KETwoV1RHQUGsJgWgZl+frb7u43+PDJLMi/z
+UQNEF2CnSmyzm0FSw7cM89BY1uM=
+=gmOp
+-----END PGP MESSAGE-----
+
+--innermultipart--
+
+--outermultipart
+X-Content-PGP-Universal-Saved-Content-Transfer-Encoding: base64
+X-Content-PGP-Universal-Saved-Content-Type: text/calendar; charset="utf-8"; method=REQUEST
+Content-Type: application/octet-stream;
+    name="Message2.pgp"
+Content-Disposition: inline;
+    filename="Message2.pgp"
+
+-----BEGIN PGP MESSAGE-----
+Version: PGP Universal 3.3.2 (Build 21495)
+
+hF4DR2b2udXyHrYSAQdAnUzZwyXYrHjU2twnCGy2k252T8eCoy/fuLB62VHeGyUw
+PdVznfAjfUFhHpBrxn+HMyepFklz5HmHytjOvaN3cdwActhA65MIRhT/7Bnadfnc
+0sCqAVP9nC3qNTD/NhVgfFF+wk8+rYJll0UeUmGTOY6duDCOKJJEhD26iPh+ZHRg
+ojAwwWrP/GRjO8vhkv7wbIQrVpSNIraMs2KHjanBZLiB2Tceh13gn1iMUT9h1Vac
+klOgB0vJN7Z8e2LdGh4W8kIopWlcSL6rxqOiXg9gQYfIH1by8+/09+kv6/9iG7yH
+R92UM9BEdhDUe6kL/7FYXZWa5z9WLORuVFGPVgxPJqZf7gNtSTx10O8GAm4WMAsJ
+6G6aldeJqVphymGdaFBzHgGe9k8ynEPMo2qFtbAGpqReeVq/N2hkyIa/39kbUbB1
+BBI1G58EyLd1PZO8+xpRvIiE/NblLuY8V08Poigg0oT3EUdLvas4ZhW5Lj+jgfix
+ICipPx2kkKD0d/8WSe4VC4Ul6LCbZea347yiiBc/n4zqhFjV4b19USoWbHzTA0f6
+Q+qCmvm6cgOoL1/prCk4J6dsM3W3lvkkwbaMmtY=
+=gsui
+-----END PGP MESSAGE-----
+
+--outermultipart--
